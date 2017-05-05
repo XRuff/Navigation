@@ -1,0 +1,9 @@
+<ol class="breadcrumb">
+	{foreach $items as $item}
+		{if $iterator->isLast()}
+			<li class="active">{_$item->label}</li>
+		{else}
+			<li><a href="{$item->url}">{_$item->label}</a></li>
+		{/if}
+	{/foreach}
+</ol>

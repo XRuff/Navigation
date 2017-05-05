@@ -1,0 +1,25 @@
+<ul class="control menu">
+	<li n:if="$useHomepage">
+		{if $homepage->isCurrent}
+			<span class="active"><strong>{$template->translate($homepage->label)}</strong></span>
+		{else}
+			<a href="{$homepage->url}">{$template->translate($homepage->label)}</a>
+		{/if}
+	</li>
+
+	{block #menu}
+	<li n:foreach="$children as $item">
+		{if $item->isCurrent}
+			<span class="active"><strong>{$template->translate($item->label)}</strong></span>
+		{else}
+			<a href="{$item->url}">{$template->translate($item->label)}</a>
+		{/if}
+
+		{if $renderChildren && count($item->getComponents()) > 0}
+			<ul>
+				{include #menu, children => $item->getComponents()}
+			</ul>
+		{/if}
+	</li>
+	{/block}
+</ul>

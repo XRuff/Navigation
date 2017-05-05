@@ -1,0 +1,34 @@
+{
+	"name": "xruff/navigation",
+	"type": "library",
+	"description": "Nette extension - navigation for breadcrumbs",
+	"keywords": ["nette", "breadcrumbs", "menu", "component"],
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Pavel Lauko"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/XRuff/Navigation/issues"
+	},
+	"require": {
+		"nette/application": "~2.3",
+		"nette/component-model": "~2.3"
+	},
+	"require-dev": {
+		"nette/application": "~2.3",
+		"nette/component-model": "~2.3",
+		"vanio/coding-standards": "^0.1@dev"
+	},
+	"autoload": {
+		"psr-4": {
+			"XRuff\\Components\\Navigation\\": "src"
+		}
+	},
+	"minimum-stability": "dev",
+	"scripts": {
+		"lint": "\"vendor/bin/phpcs\" --standard=ruleset.xml --extensions=php --encoding=utf-8 --ignore=vendor .",
+		"fix": "\"vendor/bin/phpcbf\" --standard=ruleset.xml --extensions=php --encoding=utf-8 --no-patch --ignore=vendor ."
+	}
+}
