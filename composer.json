@@ -14,11 +14,11 @@
 	},
 	"require": {
 		"nette/application": "~2.3",
-		"nette/component-model": "~2.3"
+		"nette/component-model": "~2.2"
 	},
 	"require-dev": {
 		"nette/application": "~2.3",
-		"nette/component-model": "~2.3",
+		"nette/component-model": "~2.2",
 		"vanio/coding-standards": "^0.1@dev"
 	},
 	"autoload": {
