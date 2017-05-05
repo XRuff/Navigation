@@ -1,6 +1,8 @@
 Breadcrumbs navigation
 ======
 
+Original code [Jan Marek](https://github.com/janmarek/Navigation).
+
 Requirements
 ------------
 
@@ -43,7 +45,7 @@ extensions:
 
 # and optional settings for custom templates
 navigation:
-	breadcrumbsTemplate: %appDir%/components/breadcrumbs.latte
+    breadcrumbsTemplate: %appDir%/components/breadcrumbs.latte
 
 ```
 
