@@ -2,10 +2,12 @@
 
 namespace XRuff\Components\Navigation;
 
-use Nette\Object;
+use Nette\SmartObject;
 
-class Configuration extends Object
+class Configuration
 {
+    use SmartObject;
+
 	/** @var string $shortSession */
 	public $shortSession;
 
