@@ -74,7 +74,7 @@ class Navigation extends Control
 	 */
 	protected function createComponentHomepage($name)
 	{
-		new NavigationNode($this, $name);
+		return new NavigationNode();
 	}
 
 	/**
