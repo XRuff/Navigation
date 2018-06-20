@@ -107,7 +107,7 @@ class SomePresenter extends BasePresenter
 }
 ```
 
-template.latte (breadcrumbs template is compatible with [http://getbootstrap.com/components](Bootstrap 3)):
+template.latte (breadcrumbs template is compatible with [Bootstrap 3](https://getbootstrap.com/docs/3.3/components/#breadcrumbs)):
 
 ```smarty
     ...
