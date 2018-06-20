@@ -6,7 +6,7 @@ Original code [Jan Marek](https://github.com/janmarek/Navigation).
 Requirements
 ------------
 
-Package requires PHP 5.6 or higher
+Package requires PHP 7.0 or higher
 
 - [nette/component-model](https://github.com/nette/component-model)
 - [nette/application](https://github.com/nette/application)
@@ -57,15 +57,18 @@ use XRuff\Components\Navigation\Navigation;
 
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
+	/** @var Navigation @inject */
+	public $navigationFactory;
+
 	protected function createComponentNavigation($name) {
-		$nav = new Navigation($this, $name);
+		$nav = $this->navigationFactory->create($this);
 		$nav->setupHomepage('Homepage', $this->link('Homepage:'));
 		return $nav;
 	}
 }
 ```
 
-Another presenter:
+Another presenter extended from our BasePresenter:
 
 ```php
 use XRuff\Components\Navigation\Navigation;
@@ -104,7 +107,7 @@ class SomePresenter extends BasePresenter
 }
 ```
 
-template.latte (breadcrumbs template is compatible with [http://getbootstrap.com/components/#breadcrumbs](Bootstrap 3)):
+template.latte (breadcrumbs template is compatible with [http://getbootstrap.com/components](Bootstrap 3)):
 
 ```smarty
     ...
