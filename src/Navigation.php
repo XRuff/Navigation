@@ -91,6 +91,9 @@ class Navigation extends Control
 		$template->useHomepage = $this->useHomepage && $renderHomepage;
 		$template->renderChildren = $renderChildren;
 		$template->children = $this->getComponent('homepage')->getComponents();
+		if ($this->presenter->translator) {
+			$template->setTranslator($this->presenter->translator);
+		}
 		$template->render();
 	}
 
@@ -136,6 +139,9 @@ class Navigation extends Control
 			->setFile($this->breadcrumbsTemplate ? $this->breadcrumbsTemplate : __DIR__ . '/breadcrumbs.latte');
 
 		$template->items = $items;
+		if ($this->presenter->translator) {
+			$template->setTranslator($this->presenter->translator);
+		}
 		$template->render();
 	}
 
