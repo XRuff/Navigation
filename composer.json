@@ -13,12 +13,9 @@
 		"issues": "https://github.com/XRuff/Navigation/issues"
 	},
 	"require": {
-		"nette/application": "~2.4",
-		"nette/component-model": "~2.3"
+		"nette/application": "^3.0"
 	},
 	"require-dev": {
-		"nette/application": "~2.4",
-		"nette/component-model": "~2.3",
 		"vanio/coding-standards": "^0.1@dev"
 	},
 	"autoload": {

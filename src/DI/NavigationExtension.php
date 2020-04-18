@@ -8,7 +8,7 @@ use Nette\Utils\Validators;
 class NavigationExtension extends Nette\DI\CompilerExtension
 {
 	/** @var array $defaults */
-	private static $defaults = [
+	private $defaults = [
 		'breadcrumbsTemplate' => null,
 		'menuTemplate' => null,
 	];
@@ -16,7 +16,9 @@ class NavigationExtension extends Nette\DI\CompilerExtension
 	public function loadConfiguration()
 	{
 		$builder = $this->getContainerBuilder();
-		$config = $this->getConfig(self::$defaults);
+		$this->validateConfig($this->defaults);
+
+		$config = $this->config;
 
 		if ($config['breadcrumbsTemplate']) {
 			Validators::assert($config['breadcrumbsTemplate'], 'string', 'breadcrumbsTemplate');
